@@ -7,6 +7,7 @@ body{
  background-size: 10px 10px;
  height: 200px;
  width: 100%;
+ font-family: comics;
 }
 
 h1, h2{
@@ -49,9 +50,16 @@ h1{
     background-color: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-size: 20px;
     
 }
 
+.chart{
+    width: 100%;
+    
+    background-color: #f1e5c8;
+}
+
 main{
-    /* background-image: url("https://garden.spoonflower.com/c/11473139/p/f/m/am3Vt8krBFcuHyMFXu0cNOnoLq4U3-uGU0diMv6uamrrZ1UDnPkn/Green%20Polka%20Dots%20-%20Small%20(Watermelon%20Collection).jpg"); */
+    max-height: 100vh;
 }
