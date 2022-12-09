@@ -58,8 +58,27 @@ h1{
     width: 100%;
     
     background-color: #f1e5c8;
+  
 }
 
 main{
     max-height: 100vh;
+}
+
+@media only screen and (max-width: 600px)  {
+
+    .hero{
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .identity{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .chart{
+        min-height: 400px;
+    }
 }

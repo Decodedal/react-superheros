@@ -69,10 +69,10 @@ let{id} = useParams()
             </ul>
             </div>
             
-            <div className="list">
+            {/* <div className="list">
                 <p>list here</p>
                 
-            </div>
+            </div> */}
             <div className="chart">
             <BarChart data ={
                 {
@@ -81,8 +81,8 @@ let{id} = useParams()
                       {
                         label: 'Power Stats',
                         data: [powerstats.intelligence, powerstats.strength, powerstats.speed, powerstats.durability , powerstats.power, powerstats.combat],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: hero.biography.alignment == "good" ?'rgba(100, 100, 255, 0.2)':'rgba(255, 99, 132, 0.2)'  ,
+                        borderColor: hero.biography.alignment == "good" ? 'rgba(100, 100, 255, 1)': 'rgba(255, 99, 132, 1)',
                         borderWidth: 1,
                       },
                     ],
