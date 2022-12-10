@@ -1,7 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
+import GalleryItem from "./galleryItem";
+import '../css/gallery.css'
 
-const [hero, setHero] = useEffect([
+
+
+function Gallery(){
+
+    
+const [hero, setHero] = useState([
     {
         "response": "success",
         "id": "307",
@@ -34,22 +41,27 @@ const [hero, setHero] = useEffect([
     }
 ])
 
+//     useEffect(()=>{
+//         async function fetch_heros(){
+//            const response = await fetch("http://localhost:4000/home") 
+//            const resData = await response.json();
+//            console.log(resData)
+//            }
+//            fetch_heros()
+//    },[])
 
-function Gallery(){
+console.log(hero)
 
-    useEffect(()=>{
-        async function fetch_heros(){
-           const response = await fetch("http://localhost:4000/home") 
-           const resData = await response.json();
-           console.log(resData)
-           }
-           fetch_heros()
-   },[])
 
+const galleryItems = hero.map(hero =>{
+    return(
+    <GalleryItem hero = {hero} /> 
+    )
+})
 
     return(
-        <div>
-            <h1>Gallery</h1>
+        <div className="gallery-container">
+            {galleryItems}
         </div>
     )
 }

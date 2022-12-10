@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import Gallery from "./gallery";
 
 function Home(){
     
@@ -7,6 +8,7 @@ function Home(){
 return(
     <div>
         <h1>Home Page</h1>
+        <Gallery/>
     </div>
 )
 
