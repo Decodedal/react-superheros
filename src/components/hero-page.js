@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { RingLoader } from "react-spinners";
 import {BarChart} from "./barChart"
 import "../css/hero-page.css"
+
 
 
 function HeroPage(){
@@ -29,10 +30,11 @@ let{id} = useParams()
    },[])
 
 
-// console.log(hero)
-// console.log(powerstats.strength)
 
-
+//defines id numbers for next and back buttons
+let next = Number(hero.id) + 1
+let back = Number(hero.id) -1
+let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
 
     return(
         <div>
@@ -50,10 +52,23 @@ let{id} = useParams()
                 </div>
                 :  
             <main>
-            <h1>{hero.name}</h1>
+                {document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"red"}`}
+                <nav>
+                <div className="center-nav">
+                <Link onClick={window.location.reload} className="link-arrow" to={`/${back}`}>⬅️</Link>  
+                <Link className="link" onClick={window.location.reload} to={`/${rand}`}>Random</Link>
+                <h1><u>{hero.name}</u></h1>
+                <Link className="link" to="/">Home</Link>
+                <Link onClick= {window.location.reload} className="link-arrow" to={`/${next}`}>➡️</Link>
+                </div>
+                </nav>
+            
             {/* <p>{hero.biography["place-of-birth"]}</p> */}
             <div className="hero">
-            <img id="hero-img" src={hero.image["url"]} alt={hero.name}/>
+            <img id="hero-img" onError={({ currentTarget }) => {
+                            currentTarget.onerror = null; // prevents looping
+                            currentTarget.src="https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg";
+                        }} src={hero.image["url"]} alt={hero.name}/>
             <div className="identity">
             <div className="list">
             <h2><u>{hero.biography.alignment == "good" ? "Hero" : "Villian"}</u></h2>
@@ -90,7 +105,9 @@ let{id} = useParams()
             }/>
             </div>
             </div>
+           
             </div>
+           
       
             </main>
            
