@@ -65,6 +65,7 @@ nav{
     display: flex;
     width:60%;
     margin:0 auto;
+    max-height: 100vh;
     
     
 }
@@ -76,6 +77,7 @@ nav{
     flex-direction: column;
     width:40%;
     gap:3rem;
+    max-height: 50vh;
 }
 
 .list{
@@ -96,9 +98,6 @@ nav{
   
 }
 
-main{
-    max-height: 100vh;
-}
 
 .outer-container{
     background-color: aqua;

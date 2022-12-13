@@ -6,7 +6,7 @@ function GalleryItem({hero, key}){
 console.log(hero)
     return(
         <div key={key} className="card-container">
-            <h3>{hero.name}</h3>
+            <h3><u>{hero.name}</u></h3>
             <Link to={`/${hero.id}`}>
                 <img classname = "hero-img" src = {hero.url} alt= {hero.name}
                 onError={({ currentTarget }) => {
