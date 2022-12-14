@@ -7,40 +7,9 @@ import { RingLoader } from "react-spinners";
 
 
 function Gallery(){
-const[search, setSearch] = useState('')
+const[search, setSearch] = useState(null)
 const [loading, setLoading] = useState(false)
-const [hero, setHero] = useState([
-    // {
-    //     "response": "success",
-    //     "id": "307",
-    //     "name": "Han Solo",
-    //     "url": "https://www.superherodb.com/pictures2/portraits/10/100/10456.jpg"
-    // },
-    // {
-    //     "response": "success",
-    //     "id": "285",
-    //     "name": "Gladiator",
-    //     "url": "https://www.superherodb.com/pictures2/portraits/10/100/1521.jpg"
-    // },
-    // {
-    //     "response": "success",
-    //     "id": "137",
-    //     "name": "Brainiac 5",
-    //     "url": "https://www.superherodb.com/pictures2/portraits/10/100/1183.jpg"
-    // },
-    // {
-    //     "response": "success",
-    //     "id": "99",
-    //     "name": "Black Cat",
-    //     "url": "https://www.superherodb.com/pictures2/portraits/10/100/32.jpg"
-    // },
-    // {
-    //     "response": "success",
-    //     "id": "89",
-    //     "name": "Bird-Man",
-    //     "url": "https://www.superherodb.com/pictures2/portraits/10/100/1503.jpg"
-    // }
-])
+const [hero, setHero] = useState([])
 
 const handleSearch = (e,term) =>{
     e.preventDefault()
@@ -49,9 +18,9 @@ const handleSearch = (e,term) =>{
 }
 
     useEffect(()=>{
-        if (search == ''){
+        if (search == null){
         async function fetch_heros(){
-           const response = await fetch("http://localhost:4000/home") 
+           const response = await fetch("https://super-backend.onrender.com/home") 
            const resData = await response.json();
            setHero(resData)
            setLoading(false)
@@ -59,9 +28,13 @@ const handleSearch = (e,term) =>{
           fetch_heros()
         }else{
             async function fetch_search(){
-                const response = await fetch(`http://localhost:4000/search/${search}`)
+                const response = await fetch(`https://super-backend.onrender.com/search/${search}`)
                 const resData = await response.json();
-                setHero(resData)
+                if(resData.response == "success"){
+                setHero(resData.results)
+                }else{
+                    alert("No one in the data base has this name please alter your search")
+                }
             }
             fetch_search()
         }
@@ -83,7 +56,6 @@ const galleryItems = hero.map((hero, i) =>{
         <div className="center">
     <form onSubmit={(e => e.preventDefault())} >
         <input onChange={(e => setSearch(e.target.value))} type='text' placeholder="Search for a Super"/>
-        <input type="submit"/>
     </form>
         <div className="gallery-container">
             {galleryItems}

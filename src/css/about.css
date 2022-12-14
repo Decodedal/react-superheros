@@ -1,0 +1,11 @@
+.about-card{
+    background-color: rgb(254, 249, 249);
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 70%;
+    margin: 6rem auto;
+    border-radius: 10px;
+    padding: 20px;   
+    transform: scale(120%);
+    font-size: x-large;
+}

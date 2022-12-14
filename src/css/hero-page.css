@@ -2,7 +2,7 @@ body{
     /* background-image: url("https://garden.spoonflower.com/c/11473139/p/f/m/am3Vt8krBFcuHyMFXu0cNOnoLq4U3-uGU0diMv6uamrrZ1UDnPkn/Green%20Polka%20Dots%20-%20Small%20(Watermelon%20Collection).jpg"); */
  background-image: radial-gradient(#212121 20%, transparent 20%),
      radial-gradient(#2b2626 20%, transparent 20%);
- /* background-color: #f1e5c8; */
+ background-color: #f1e5c8;
  background-position: 0 0, 50px 50px;
  background-size: 10px 10px;
  height: 200px;

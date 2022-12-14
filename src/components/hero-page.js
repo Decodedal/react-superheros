@@ -19,7 +19,7 @@ let{id} = useParams()
 // triggers loader while fetching info then turns it off after setting state for hero.
     useEffect(()=>{
         async function fetch_heros(id){
-            const response = await fetch(`http://localhost:4000/${id}`) 
+            const response = await fetch(`https://super-backend.onrender.com/${id}`) 
             const resData = await response.json();
             setHero(resData)
             setLoading(false)
@@ -52,7 +52,7 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
                 </div>
                 :  
             <main>
-                {document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"red"}`}
+                {document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"#ff3300"}`}
                 <nav>
                 <div className="center-nav">
                 <Link onClick={window.location.reload} className="link-arrow" to={`/${back}`}>⬅️</Link>  
