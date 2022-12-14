@@ -7,7 +7,7 @@ import { RingLoader } from "react-spinners";
 
 
 function Gallery(){
-
+const[search, setSearch] = useState('')
 const [loading, setLoading] = useState(false)
 const [hero, setHero] = useState([
     // {
@@ -42,7 +42,14 @@ const [hero, setHero] = useState([
     // }
 ])
 
+const handleSearch = (e,term) =>{
+    e.preventDefault()
+    setSearch(term)
+    console.log(term)
+}
+
     useEffect(()=>{
+        if (search == ''){
         async function fetch_heros(){
            const response = await fetch("http://localhost:4000/home") 
            const resData = await response.json();
@@ -50,8 +57,17 @@ const [hero, setHero] = useState([
            setLoading(false)
            }
           fetch_heros()
+        }else{
+            async function fetch_search(){
+                const response = await fetch(`http://localhost:4000/search/${search}`)
+                const resData = await response.json();
+                setHero(resData)
+            }
+            fetch_search()
+        }
+
            
-   },[])
+   },[search])
 
 console.log(hero)
 
@@ -65,6 +81,10 @@ const galleryItems = hero.map((hero, i) =>{
 
     return(
         <div className="center">
+    <form onSubmit={(e => e.preventDefault())} >
+        <input onChange={(e => setSearch(e.target.value))} type='text' placeholder="Search for a Super"/>
+        <input type="submit"/>
+    </form>
         <div className="gallery-container">
             {galleryItems}
             </div>

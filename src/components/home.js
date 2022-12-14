@@ -1,9 +1,7 @@
 import React from "react";
-import { useEffect } from "react";
 import Gallery from "./gallery";
 
 function Home(){
-    
 
 return(
     <div>
