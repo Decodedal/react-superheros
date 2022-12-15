@@ -64,7 +64,7 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
                 <div className="center-nav">
                 <Link onClick={window.location.reload} className="link-arrow" to={`/${back}`}>⬅️</Link>  
                 <Link className="link" onClick={window.location.reload} to={`/${rand}`}>Random</Link>
-                <h1><u>{hero.name}</u></h1>
+                <h1 id="hero-header" ><u>{hero.name}</u></h1>
                 <Link className="link" to="/">Home</Link>
                 <Link onClick= {window.location.reload} className="link-arrow" to={`/${next}`}>➡️</Link>
                 </div>
