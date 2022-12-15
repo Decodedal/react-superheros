@@ -19,7 +19,14 @@ let{id} = useParams()
 // triggers loader while fetching info then turns it off after setting state for hero.
     useEffect(()=>{
         async function fetch_heros(id){
-            const response = await fetch(`https://super-backend.onrender.com/${id}`) 
+            const response = await fetch(`https://super-backend.onrender.com/${id}`,{
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                  }
+            }
+            
+            ) 
             const resData = await response.json();
             setHero(resData)
             setLoading(false)

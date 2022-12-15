@@ -20,7 +20,12 @@ const handleSearch = (e,term) =>{
     useEffect(()=>{
         if (search == null){
         async function fetch_heros(){
-           const response = await fetch("https://super-backend.onrender.com/home") 
+           const response = await fetch("https://super-backend.onrender.com/home",{
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              }
+           }) 
            const resData = await response.json();
            setHero(resData)
            setLoading(false)
@@ -28,7 +33,12 @@ const handleSearch = (e,term) =>{
           fetch_heros()
         }else{
             async function fetch_search(){
-                const response = await fetch(`https://super-backend.onrender.com/search/${search}`)
+                const response = await fetch(`https://super-backend.onrender.com/search/${search}`,{
+                    headers: {
+                        'Content-Type': 'application/json'
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                      }
+                })
                 const resData = await response.json();
                 if(resData.response == "success"){
                 setHero(resData.results)
