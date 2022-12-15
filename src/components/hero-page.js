@@ -59,7 +59,7 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
                 </div>
                 :  
             <main>
-                {document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"#ff3300"}`}
+                <p style={{display:'none'}}>{document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"#ff3300"}`}</p>
                 <nav>
                 <div className="center-nav">
                 <Link onClick={window.location.reload} className="link-arrow" to={`/${back}`}>⬅️</Link>  
