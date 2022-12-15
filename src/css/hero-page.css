@@ -7,7 +7,7 @@ body{
  background-size: 10px 10px;
  height: 200px;
  width: 100%;
- font-family: comics;
+ font-family: comics, "Brush Script MT", cursive;
 }
 
 h1, h2{
@@ -57,7 +57,7 @@ nav{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 20px;
     margin:0 auto;
-    width: 40%;
+    width: 50%;
 }
 
 .hero{
@@ -66,6 +66,7 @@ nav{
     width:60%;
     margin:0 auto;
     max-height: 100vh;
+
     
     
 }
@@ -78,6 +79,8 @@ nav{
     width:40%;
     gap:3rem;
     max-height: 50vh;
+    
+    
 }
 
 .list{
@@ -95,13 +98,16 @@ nav{
     border-radius: 20%;
     /* border: 1px solid black; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  
 }
 
 
 .outer-container{
     background-color: aqua;
     width: 60%;
+}
+
+li{
+    padding: .2em;
 }
 
 @media only screen and (max-width: 600px)  {
@@ -125,5 +131,9 @@ nav{
     }
     h1{
         padding: .5rem;
+    }
+
+    #hero-img{
+        width:90%
     }
 }

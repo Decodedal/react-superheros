@@ -87,6 +87,8 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
                 <li>weight: {hero.appearance.weight.join(' , ')}</li>
                 <li>race: {hero.appearance.race.toLowerCase()}</li>
                 <li>gender: {hero.appearance.gender}</li>
+                <li>occupation:{hero.work.occupation == '-' ? " none" : ` ${hero.work.occupation.toLowerCase()}`}</li>
+                <li>affiliations:{hero.connections["group-affiliation"] == '-' ? " unknown" : ` ${hero.connections["group-affiliation"].toLowerCase()}` }</li>
                 <li>universe: {hero.biography.publisher}</li> 
             </ul>
             </div>

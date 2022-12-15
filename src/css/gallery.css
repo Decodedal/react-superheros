@@ -47,3 +47,20 @@ h3{
     transform: scale(105%);
   }
   
+  @media only screen and (max-width: 800px){
+    .gallery-container{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+    
+  @media only screen and (max-width: 600px){
+    .gallery-container{
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    input{
+      width:40%
+    }
+
+  }

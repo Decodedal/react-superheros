@@ -20,3 +20,10 @@
     transform: scale(160%);
 
 }
+
+  
+@media only screen and (max-width: 600px){
+   .home-nav{
+    flex-direction: column;
+   }
+  }
