@@ -7,6 +7,7 @@ function Home(){
 
 return(
     <div>
+        <p style={{display:'none'}}>{document.title = "Superhero Homepage"}</p>
         <nav>
         <div className="home-nav">
             <div></div>

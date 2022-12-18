@@ -48,6 +48,7 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
             {
                 loading ? 
                 <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+                <p style={{display:'none'}}>{document.title = `Super -`}</p>
                 <RingLoader
                 color="#0000FF"
                 loading={loading}
@@ -60,6 +61,7 @@ let rand = Math.floor(Math.random() * (600 - 1 + 1) + 1)
                 :  
             <main>
                 <p style={{display:'none'}}>{document.body.style.backgroundColor = `${hero.biography.alignment == "good"? "#6699ff":"#ff3300"}`}</p>
+                <p style={{display:'none'}}>{document.title = `Super - ${hero.name}`}</p>
                 <nav>
                 <div className="center-nav">
                 <Link onClick={window.location.reload} className="link-arrow" to={`/${back}`}>⬅️</Link>  
