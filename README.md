@@ -2,9 +2,9 @@
 
 ## Description
 
-The aim of this project was to create an Index of super heros. Includeing a home page that will display 20 random heros or villians and allow users to search for a specific character. And Individual Pages for each hero or villian complete with a picture info about them and a graph displaying their power stats. All the data in this project is being sourced from [superHero.api](https://www.superheroapi.com/)
+The aim of this project was to create an Index of super heros. Includeing a home page that will display 10 random heros or villians and allow users to search for a specific character. And Individual Pages for each hero or villian complete with a picture info about them and a graph displaying their power stats. All the data in this project is being sourced from [superHero.api](https://www.superheroapi.com/)
 
-## demo for [ReactSuperheros](https://react-superheros.onrender.com/)
+## Demo for [ReactSuperheros](https://react-superheros.onrender.com/)
 
 ## Technologies used 
 - React.js
@@ -26,6 +26,6 @@ The aim of this project was to create an Index of super heros. Includeing a home
     base route is https://super-backend.onrender.com/
     - /:id - returns result for individual hero
     - /search/:name - returns results for all matching search
-    - /home - returns info for 20 random heros / villians 
+    - /home - returns info for 10 random heros / villians 
 
 
