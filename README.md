@@ -1,71 +1,31 @@
-# Getting Started with Create React App
+# React Index of SuperHeros
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The aim of this project was to create an Index of super heros. Includeing a home page that will display 20 random heros or villians and allow users to search for a specific character. And Individual Pages for each hero or villian complete with a picture info about them and a graph displaying their power stats. All the data in this project is being sourced from [superHero.api](https://www.superheroapi.com/)
 
-In the project directory, you can run:
+## demo for [ReactSuperheros](https://react-superheros.onrender.com/)
 
-### `npm start`
+## Technologies used 
+- React.js
+  - react-chartjs-2
+  - React-spinners
+  - react-router-dom
+- node.js
+  - express.js  
+  - node-fetch
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ## Technical Information
+  project should be good to go once you run an npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  ## Issues
+  Right now if the user search does not return a result they are met with an error message fired from the browser, this disables the ability to type until clicked and could be handled better. 
 
-### `npm test`
+  ## API Docs
+    [superHero.api](https://www.superheroapi.com/) Has their own api with excillent docs I had to create an express backend to act as a proxy server since their api would not serve results to local host.
+    base route is https://super-backend.onrender.com/
+    - /:id - returns result for individual hero
+    - /search/:name - returns results for all matching search
+    - /home - returns info for 20 random heros / villians 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-superheros
