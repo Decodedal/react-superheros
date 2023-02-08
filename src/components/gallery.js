@@ -3,22 +3,24 @@ import { useState, useEffect} from "react";
 import GalleryItem from "./galleryItem";
 import '../css/gallery.css'
 import { RingLoader } from "react-spinners";
+import NoSuperFound from "./noSuperFound";
 
 
 
 function Gallery(){
 const[search, setSearch] = useState(null)
-const [loading, setLoading] = useState(false)
+const [loading, setLoading] = useState(true)
 const [hero, setHero] = useState([])
+const [found, setFound] = useState(false)
 
 const handleSearch = (e,term) =>{
     e.preventDefault()
     setSearch(term)
-    console.log(term)
+    setLoading(true)
 }
 
     useEffect(()=>{
-        if (search == null){
+        if (search === null || search === ""){
         async function fetch_heros(){
            const response = await fetch("https://super-backend.onrender.com/home",{
             headers: {
@@ -29,6 +31,7 @@ const handleSearch = (e,term) =>{
            const resData = await response.json();
            setHero(resData)
            setLoading(false)
+           setFound(true)
            }
           fetch_heros()
         }else{
@@ -42,8 +45,10 @@ const handleSearch = (e,term) =>{
                 const resData = await response.json();
                 if(resData.response == "success"){
                 setHero(resData.results)
+                setLoading(false)
+                setFound(true)
                 }else{
-                    alert("No one in the data base has this name please alter your search")
+                    setFound(false)
                 }
             }
             fetch_search()
@@ -67,10 +72,33 @@ const galleryItems = hero.map((hero, i) =>{
     <form onSubmit={(e => e.preventDefault())} >
         <input onChange={(e => setSearch(e.target.value))} type='text' placeholder="Search for a Super"/>
     </form>
-        <div className="gallery-container">
+    { loading?
+        <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+        <p style={{display:'none'}}>{document.title = `Super -`}</p>
+        <RingLoader
+        color="#0000FF"
+        loading={loading}
+        size={150}
+        margin = "0 auto"
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        />
+        </div>
+     :
+        
+         <>
+            {found === true ?
+            <div className="gallery-container">
             {galleryItems}
             </div>
-        </div>
+            :
+            <NoSuperFound/>
+            }
+            </>
+            
+        
+    }
+    </div>
     )
 }
 
